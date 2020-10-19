@@ -37,7 +37,15 @@ void loop() {
   if (key){
     lcd.print(key);
 
-    if (key == '=')
+    if (key == 'o')
+    {
+      op1 = "";
+      op2 = "";
+      operator_entered = false;
+      lcd.clear();
+      lcd.setCursor(0, 0);
+    }
+    else if (key == '=')
     {
       int o1 = op1.toInt();
       int o2 = op2.toInt();
