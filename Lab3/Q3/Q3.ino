@@ -18,37 +18,66 @@ const int rs = 13, en = 12, d4 = 8, d5 = 9, d6 = 10, d7 = 11;
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-byte col = 0;
-String password;
+String op1, op2;
+char _operator;
+boolean operator_entered = false;
 
 void setup() {
   Serial.begin(9600);
   lcd.begin(16, 2);
   lcd.clear();
+  lcd.setCursor(0, 0);
 }
 
 void loop() {
 //  lcd.clear();
-  lcd.setCursor(col, 0);
 
   char key = keypad.getKey();
   
   if (key){
-    Serial.println(key);
     lcd.print(key);
-    
-    if (key == '*')
+
+    if (key == '=')
     {
+      int o1 = op1.toInt();
+      int o2 = op2.toInt();
       lcd.setCursor(0, 1);
-      if (password == "1234") {
-        lcd.print("Correct password");
-      } else {
-        lcd.print("Wrong password");
+
+      switch (_operator)
+      {
+        case '+':
+          lcd.print(o1 + o2);
+          break;
+        case '-':
+          lcd.print(o1 - o2);
+          break;
+        case '*':
+          lcd.print(o1 * o2);
+          break;
+        case '/':
+          lcd.print((float)o1 / o2);
+          break;
       }
+      
+    }
+    else if (!operator_entered && (key == '+' || key == '-' || key == '*' || key == '/'))
+    {
+      _operator = key;
+      operator_entered = true;
+    }
+    else if (! operator_entered)
+    {
+      op1 += key;
+    }
+    else
+    {
+      op2 += key;
     }
 
-    password += key;
-    col++;
+    Serial.println("Op1: " + op1);
+    Serial.print("Op:  ");
+    Serial.println(_operator);
+    Serial.println("Op2: " + op2);
   }
   
 }
