@@ -26,13 +26,10 @@ void loop() {
   char key = keypad.getKey();
   
   if (key){
-    if (key == 'o')
-    {
-      degree = "";
-    }
-    else if (key == '*')
+    if (key == '*')
     {
       myservo.write(degree.toInt());
+      degree = "";
     }
     else if (key >= '0' && key <= '9')
     {
@@ -40,6 +37,5 @@ void loop() {
     }
 
     Serial.println(degree);
-    
   }
 }
