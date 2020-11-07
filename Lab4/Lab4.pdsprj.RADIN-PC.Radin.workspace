@@ -32,10 +32,10 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="56" flags="00000001" y="82" h="453" pid="0" iid="4">
+   <POPUP w="695" x="56" flags="00008001" y="82" h="453" pid="0" iid="4">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="49" flags="00008023" y="313" h="250" pid="0" iid="5">
+   <POPUP w="450" x="49" flags="00000023" y="313" h="250" pid="0" iid="5">
     <PROPERTIES>
      <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
