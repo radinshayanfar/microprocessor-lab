@@ -8,7 +8,7 @@
   <PWI>
    <POPUP w="800" x="46" flags="00000002" y="190" h="200" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">542</ITEM>
+     <ITEM name="Message Column Width">663</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
      <ITEM name="Time Column Width">120</ITEM>
@@ -32,7 +32,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="41" flags="00008001" y="276" h="453" pid="0" iid="5">
+   <POPUP w="695" x="41" flags="00000001" y="276" h="453" pid="0" iid="5">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="450" x="561" flags="00000023" y="99" h="250" pid="0" iid="3">
@@ -191,13 +191,13 @@
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="165" flags="00000023" y="115" h="250" pid="0" iid="9">
+   <POPUP w="450" x="165" flags="00008023" y="115" h="250" pid="0" iid="9">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="226" x="498" flags="00000008" y="589" h="215" pid="3" iid="6">
+   <POPUP w="30" x="498" flags="00000008" y="589" h="16" pid="3" iid="6">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="518" flags="0000000a" y="609" h="1" pid="10" iid="6">
@@ -260,7 +260,7 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="226" x="638" flags="00000008" y="729" h="215" pid="3" iid="7">
+   <POPUP w="30" x="638" flags="00000008" y="729" h="16" pid="3" iid="7">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="658" flags="0000000a" y="749" h="1" pid="10" iid="7">
@@ -323,7 +323,7 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="226" x="778" flags="00000008" y="844" h="215" pid="3" iid="10">
+   <POPUP w="30" x="778" flags="00000008" y="844" h="16" pid="3" iid="10">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="798" flags="0000000a" y="859" h="1" pid="10" iid="10">
