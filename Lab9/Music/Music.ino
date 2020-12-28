@@ -2,15 +2,15 @@
 
 //#include "jingle_bells.h"
 //#include "Ode_to_Joy.h"
-#include "the_imperial_march.h"
+//#include "the_imperial_march.h"
 //#include "frere_jacques.h"
-//#include "ey_iran.h"
+#include "ey_iran.h"
 
-//#define TEMPO 120
+//#define TEMPO 180
 //#define TEMPO 150
-#define TEMPO 150
+//#define TEMPO 150
 //#define TEMPO 135
-//#define TEMPO 210
+#define TEMPO 210
 
 const int potPin = A0, soundPin = 8;
 
