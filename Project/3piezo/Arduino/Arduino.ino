@@ -1,8 +1,10 @@
-#include "pitches.h"
+#include <Tone.h>
 
-#define FREQ_DIV 1
-#define SOUND_PIN 11
-#define NOTES_DURATION 10
+#define FREQ_DIV 4
+
+Tone tone0;
+Tone tone1;
+Tone tone2;
 
 const int leds[] = {3, 4, 5};
 bool isPlaying[3] = {0};
@@ -20,6 +22,11 @@ void setup() {
   pinMode(leds[2], OUTPUT);
   pinMode(leds[1], OUTPUT);
   pinMode(leds[0], OUTPUT);
+
+  tone0.begin(8);
+  tone1.begin(9);
+  tone2.begin(10);
+
 }
 
 void loop() {
@@ -82,11 +89,12 @@ void loop() {
       case 'y':
         frets[0] = 5;
         break;
-
+      
       case 'm':
         if (isPlaying[2]) {
           isPlaying[2] = false;
           digitalWrite(leds[2], LOW);
+          tone2.stop();
         } else {
           isPlaying[2] = true;
           digitalWrite(leds[2], HIGH);
@@ -96,6 +104,7 @@ void loop() {
         if (isPlaying[1]) {
           isPlaying[1] = false;
           digitalWrite(leds[1], LOW);
+          tone1.stop();
         } else {
           isPlaying[1] = true;
           digitalWrite(leds[1], HIGH);
@@ -105,6 +114,7 @@ void loop() {
         if (isPlaying[0]) {
           isPlaying[0] = false;
           digitalWrite(leds[0], LOW);
+          tone0.stop();
         } else {
           isPlaying[0] = true;
           digitalWrite(leds[0], HIGH);
@@ -112,21 +122,18 @@ void loop() {
         break;
     };
 
-  }
-
-  if (isPlaying[2]) {
-    scale = analogRead(A2) / 512.0;
-    tone(SOUND_PIN, (int) (notes[2][frets[2]] * FREQ_DIV * scale), NOTES_DURATION);
-    delay(NOTES_DURATION);
-  }
-  if (isPlaying[1]) {
-    scale = analogRead(A1) / 512.0;
-    tone(SOUND_PIN, (int) (notes[1][frets[1]] * FREQ_DIV * scale), NOTES_DURATION);
-    delay(NOTES_DURATION);
-  }
-  if (isPlaying[0]) {
-    scale = analogRead(A0) / 512.0;
-    tone(SOUND_PIN, (int) (notes[0][frets[0]] * FREQ_DIV * scale), NOTES_DURATION);
-    delay(NOTES_DURATION);
+    if (isPlaying[2]) {
+      scale = analogRead(A2) / 512.0;
+      tone2.play((int) (notes[2][frets[2]] * FREQ_DIV * scale));
+    }
+    if (isPlaying[1]) {
+      scale = analogRead(A1) / 512.0;
+      tone1.play((int) (notes[1][frets[1]] * FREQ_DIV * scale));
+    }
+    if (isPlaying[0]) {
+      scale = analogRead(A0) / 512.0;
+      tone0.play((int) (notes[0][frets[0]] * FREQ_DIV * scale));
+    }
+    
   }
 }
