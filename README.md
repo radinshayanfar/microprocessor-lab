@@ -22,4 +22,4 @@ All codes are written in C++ using Arduino IDE and simulated on Arduino Mega 265
 
 ## Full description
 
-You can read full description (in Persian) [here](https://github.com/radinshayanfar/microprocessor-lab/blob/master/Microlab99.pdf).
+You can read the full description (in Persian) [here](https://github.com/radinshayanfar/microprocessor-lab/blob/master/Microlab99.pdf).
